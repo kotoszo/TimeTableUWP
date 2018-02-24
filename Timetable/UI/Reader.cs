@@ -19,11 +19,21 @@ namespace UI
     enum Directions { ToSportpalya, ToAllomas, ToMargit }
     class Reader
     {
+        Dictionary<Directions, string> XmlFiles;
+        internal Reader()
+        {
+            XmlFiles = new Dictionary<Directions, string>()
+            {
+                { Directions.ToSportpalya, "XmlToSportpalya.xml" },
+                { Directions.ToAllomas, "XmlToAllomas.xml" },
+                { Directions.ToMargit, "XmlFromMargit.xml" }
+            };
+        }
         private IEnumerable<Bus> Xml(string fileName)
         {
-            string XMLPath = Path.Combine(Package.Current.InstalledLocation.Path, fileName);
+            string correctPath = "Datas\\" + fileName;
+            string XMLPath = Path.Combine(Package.Current.InstalledLocation.Path, correctPath);
             XDocument loadedData = XDocument.Load(XMLPath);
-
             var data = from query in loadedData.Descendants("bus")
                 select new Bus
                 {
@@ -31,7 +41,6 @@ namespace UI
                     Departing = (string)query.Attribute("departing"),
                     TotalTime= (string)query.Attribute("total"),
                 };
-
             return data;
         }
         
@@ -51,16 +60,7 @@ namespace UI
         }
         private IEnumerable<Bus> AllTheBuses(Directions direction)
         {
-            switch (direction)
-            {
-                case Directions.ToAllomas:
-                    return Xml("XmlToAllomas.xml");
-                case Directions.ToMargit:
-                    return Xml("XmlFromMargit.xml");    // TODO Hév
-                case Directions.ToSportpalya:
-                default:
-                    return Xml("XmlToSportpalya.xml");
-            }
+            return Xml(XmlFiles[direction]);
         }
         private int GetTime()
         {
