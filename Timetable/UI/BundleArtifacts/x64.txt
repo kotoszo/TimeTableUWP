@@ -1,0 +1,2 @@
+MainPackage=C:\c#\UWP\myFirstUWPapp\Timetable\UI\bin\x64\Release\UI_1.0.8.0_x64.appx
+SymbolPackage=C:\c#\UWP\myFirstUWPapp\Timetable\UI\AppPackages\UI_1.0.8.0_Test\UI_1.0.8.0_x64.appxsym

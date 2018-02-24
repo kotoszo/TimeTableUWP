@@ -1,0 +1,219 @@
+{
+  "Buses": [
+    {
+      "Departing": "04:45",
+      "Arriving": "04:55",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "05:15",
+      "Arriving": "05:25",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "05:40",
+      "Arriving": "05:50",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "05:45",
+      "Arriving": "06:09",
+      "Total": "00:24"
+    },
+    {
+      "Departing": "06:20",
+      "Arriving": "06:30",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "06:25",
+      "Arriving": "06:35",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "06:25",
+      "Arriving": "06:49",
+      "Total": "00:24"
+    },
+    {
+      "Departing": "06:35",
+      "Arriving": "06:45",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "07:10",
+      "Arriving": "07:34",
+      "Total": "00:24"
+    },
+    {
+      "Departing": "07:10",
+      "Arriving": "07:32",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "07:25",
+      "Arriving": "07:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "08:05",
+      "Arriving": "08:27",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "08:05",
+      "Arriving": "08:29",
+      "Total": "00:24"
+    },
+    {
+      "Departing": "08:25",
+      "Arriving": "08:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "09:05",
+      "Arriving": "09:27",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "09:25",
+      "Arriving": "09:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "10:25",
+      "Arriving": "10:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "10:25",
+      "Arriving": "10:49",
+      "Total": "00:24"
+    },
+    {
+      "Departing": "11:25",
+      "Arriving": "11:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "12:25",
+      "Arriving": "12:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "13:05",
+      "Arriving": "13:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "13:25",
+      "Arriving": "13:47",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "13:45",
+      "Arriving": "13:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "14:05",
+      "Arriving": "14:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "14:25",
+      "Arriving": "14:47",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "14:45",
+      "Arriving": "14:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "15:05",
+      "Arriving": "15:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "15:25",
+      "Arriving": "15:47",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "15:45",
+      "Arriving": "15:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "16:05",
+      "Arriving": "16:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "16:25",
+      "Arriving": "16:37",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "16:45",
+      "Arriving": "16:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "17:05",
+      "Arriving": "17:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "17:25",
+      "Arriving": "17:47",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "17:45",
+      "Arriving": "17:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "18:05",
+      "Arriving": "18:17",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "18:25",
+      "Arriving": "18:47",
+      "Total": "00:22"
+    },
+    {
+      "Departing": "18:45",
+      "Arriving": "18:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "19:45",
+      "Arriving": "19:57",
+      "Total": "00:12"
+    },
+    {
+      "Departing": "20:25",
+      "Arriving": "20:35",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "21:25",
+      "Arriving": "21:35",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "22:25",
+      "Arriving": "22:35",
+      "Total": "00:10"
+    },
+    {
+      "Departing": "23:20",
+      "Arriving": "23:39",
+      "Total": "00:19"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<buses>
+  <bus total="00:10" arriving="04:55" departing="04:45"/>
+  <bus total="00:10" arriving="05:25" departing="05:15"/>
+  <bus total="00:10" arriving="05:50" departing="05:40"/>
+  <bus total="00:24" arriving="06:09" departing="05:45"/>
+  <bus total="00:10" arriving="06:30" departing="06:20"/>
+  <bus total="00:10" arriving="06:35" departing="06:25"/>
+  <bus total="00:24" arriving="06:49" departing="06:25"/>
+  <bus total="00:10" arriving="06:45" departing="06:35"/>
+  <bus total="00:24" arriving="07:34" departing="07:10"/>
+  <bus total="00:22" arriving="07:32" departing="07:10"/>
+  <bus total="00:12" arriving="07:37" departing="07:25"/>
+  <bus total="00:22" arriving="08:27" departing="08:05"/>
+  <bus total="00:24" arriving="08:29" departing="08:05"/>
+  <bus total="00:12" arriving="08:37" departing="08:25"/>
+  <bus total="00:22" arriving="09:27" departing="09:05"/>
+  <bus total="00:12" arriving="09:37" departing="09:25"/>
+  <bus total="00:12" arriving="10:37" departing="10:25"/>
+  <bus total="00:24" arriving="10:49" departing="10:25"/>
+  <bus total="00:12" arriving="11:37" departing="11:25"/>
+  <bus total="00:12" arriving="12:37" departing="12:25"/>
+  <bus total="00:12" arriving="13:17" departing="13:05"/>
+  <bus total="00:22" arriving="13:47" departing="13:25"/>
+  <bus total="00:12" arriving="13:57" departing="13:45"/>
+  <bus total="00:12" arriving="14:17" departing="14:05"/>
+  <bus total="00:22" arriving="14:47" departing="14:25"/>
+  <bus total="00:12" arriving="14:57" departing="14:45"/>
+  <bus total="00:12" arriving="15:17" departing="15:05"/>
+  <bus total="00:22" arriving="15:47" departing="15:25"/>
+  <bus total="00:12" arriving="15:57" departing="15:45"/>
+  <bus total="00:12" arriving="16:17" departing="16:05"/>
+  <bus total="00:12" arriving="16:37" departing="16:25"/>
+  <bus total="00:12" arriving="16:57" departing="16:45"/>
+  <bus total="00:12" arriving="17:17" departing="17:05"/>
+  <bus total="00:22" arriving="17:47" departing="17:25"/>
+  <bus total="00:12" arriving="17:57" departing="17:45"/>
+  <bus total="00:12" arriving="18:17" departing="18:05"/>
+  <bus total="00:22" arriving="18:47" departing="18:25"/>
+  <bus total="00:12" arriving="18:57" departing="18:45"/>
+  <bus total="00:12" arriving="19:57" departing="19:45"/>
+  <bus total="00:10" arriving="20:35" departing="20:25"/>
+  <bus total="00:10" arriving="21:35" departing="21:25"/>
+  <bus total="00:10" arriving="22:35" departing="22:25"/>
+  <bus total="00:19" arriving="23:39" departing="23:20"/>
+</buses>
