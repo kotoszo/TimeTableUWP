@@ -39,8 +39,11 @@
                 Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"></Button>
         <Button Name="fromBatyi" Content="Hév" Click="fromBatyi_Click"
                 Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2"></Button>
-        
-        <ListView Name="resultView" Grid.Column="3" Grid.ColumnSpan="6" Grid.Row="1" Header="Menetirány" FontSize="24">
+
+        <TextBlock Name="Header" Text="Menetirány" 
+                   Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="4"
+                   FontSize="24"></TextBlock>
+        <ListView Name="resultView" Grid.Column="3" Grid.ColumnSpan="6" Grid.Row="1"  FontSize="24">
             
         </ListView>
     </Grid>

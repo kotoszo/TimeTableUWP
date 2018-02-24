@@ -37,20 +37,20 @@ namespace UI
 
         private void ToSzteBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!resultView.Header.Equals("Állomás felé"))
+            if (!Header.Text.Equals("Állomás felé"))
             {
                 resultView.Items.Clear();
-                resultView.Header = "Állomás felé";
+                Header.Text = "Állomás felé";
                 ShowBuses(Directions.ToAllomas);
             }
         }
 
         private void ToHomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!resultView.Header.Equals("Sportpálya felé"))
+            if (!Header.Text.Equals("Sportpálya felé"))
             {
                 resultView.Items.Clear();
-                resultView.Header = "Sportpálya felé";
+                Header.Text = "Sportpálya felé";
                 ShowBuses(Directions.ToSportpalya);
             }
         }
