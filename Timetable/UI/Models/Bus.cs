@@ -12,15 +12,21 @@ namespace UI.Models
         public string Departing
         {
             get { return departing; }
-            set { departing = value;
-                string str = "";
-                foreach (var item in value)
-                {
-                    if (int.TryParse(item.ToString(), out int rea)) { str += item; }
-                }
-                int.TryParse(str, out int res);
-                Value = res;
+            set
+            {
+                departing = value;
+                SetValue(value);
             }
+        }
+        private void SetValue(string value)
+        {
+            string str = "";
+            foreach (var item in value)
+            {
+                if (int.TryParse(item.ToString(), out int rea)) { str += item; }
+            }
+            int.TryParse(str, out int res);
+            Value = res;
         }
 
         public string Arriving { get; set; }
