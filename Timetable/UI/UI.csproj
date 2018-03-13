@@ -113,9 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datas\config.xml" />
-    <Content Include="Datas\XmlFromMargit.xml" />
-    <Content Include="Datas\XmlToAllomas.xml" />
-    <Content Include="Datas\XmlToSportpalya.xml" />
+    <Content Include="Datas\HevFromMargit.xml" />
+    <Content Include="Datas\BusToAllomas.xml" />
+    <Content Include="Datas\BusToSportpalya.xml" />
+    <Content Include="Datas\HevToMargit.xml" />
     <Content Include="XmlFromMargit.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
