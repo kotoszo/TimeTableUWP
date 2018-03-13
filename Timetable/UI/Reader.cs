@@ -87,7 +87,7 @@ namespace UI
             int index = 0;
             while (!isCurrent)
             {
-                if (currentTime > loadedBuses[direction][index].MilitaryTIme)
+                if (currentTime >= loadedBuses[direction][index].MilitaryTIme)
                 {
                     loadedBuses[direction].RemoveAt(index);
                 }
