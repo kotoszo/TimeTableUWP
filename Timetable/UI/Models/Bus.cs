@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace UI.Models
 {
-    struct Bus
+    public class Bus : Vehicle
     {
         private string departing;
+        /// <summary>
+        /// The time in string format.
+        /// </summary>
         public string Departing
         {
             get { return departing; }
@@ -23,14 +26,16 @@ namespace UI.Models
             string str = "";
             foreach (var item in value)
             {
-                if (int.TryParse(item.ToString(), out int rea)) { str += item; }
+                if(char.IsDigit(item)) { str += (int)Char.GetNumericValue(item); }
             }
             int.TryParse(str, out int res);
-            Value = res;
+            MilitaryTIme = res;
         }
-
         public string Arriving { get; set; }
-        public string TotalTime { get; set; }
-        public int Value { get; private set; }
+        public string TravellingTime { get; set; }
+        public override string ToString()
+        {
+            return string.Format("Indulás: {0} Érkezés: {1}\nMenetidő: {2}\n", Departing, Arriving, TravellingTime);
+        }
     }
 }
