@@ -13,21 +13,52 @@ using Windows.Data.Json;
 using Windows.Globalization;
 using Windows.Globalization.DateTimeFormatting;
 using Windows.Storage;
+using Windows.UI.Notifications;
 
 namespace UI
 {
-    enum Directions { ToSportpalya, ToAllomas, ToMargit }
+    enum Directions { BusToSportpalya, BusToAllomas, HevFromMargit, HevToMargit }
     class Reader
     {
         Dictionary<Directions, string> XmlFiles;
+        private Dictionary<Directions, List<Bus>> loadedBuses;
         internal Reader()
         {
+            loadedBuses = new Dictionary<Directions, List<Bus>>();
             XmlFiles = new Dictionary<Directions, string>()
             {
-                { Directions.ToSportpalya, "XmlToSportpalya.xml" },
-                { Directions.ToAllomas, "XmlToAllomas.xml" },
-                { Directions.ToMargit, "XmlFromMargit.xml" }
+                { Directions.BusToSportpalya, "BusToSportpalya.xml" },
+                { Directions.BusToAllomas, "BusToAllomas.xml" },
+                { Directions.HevFromMargit, "HevFromMargit.xml" },
+                { Directions.HevToMargit, "HevToMargit.xml" }
             };
+        }
+        internal List<Bus> GetBuses(Directions direction)
+        {
+            int currentTime = GetTime();
+            if (!loadedBuses.ContainsKey(direction))
+            {
+                IEnumerable<Bus> buses = AllTheBuses(direction);
+                List<Bus> resultList = new List<Bus>();
+                foreach (Bus bus in buses)
+                {
+                    if(currentTime < bus.MilitaryTIme)
+                    {
+                        if (IsNotificationSet(bus.Departing)) { bus.IsSet = true; }
+                        resultList.Add(bus);
+                    }
+                }
+                loadedBuses.Add(direction, resultList);
+            }
+            else
+            {
+                UpdatePossibleBuses(direction, currentTime);
+            }
+            return loadedBuses[direction];
+        }
+        private IEnumerable<Bus> AllTheBuses(Directions direction)
+        {
+            return Xml(XmlFiles[direction]);
         }
         private IEnumerable<Bus> Xml(string fileName)
         {
@@ -39,41 +70,41 @@ namespace UI
                 {
                     Arriving = (string)query.Attribute("arriving"),
                     Departing = (string)query.Attribute("departing"),
-                    TotalTime= (string)query.Attribute("total"),
+                    TravellingTime = (string)query.Attribute("total"),
                 };
             return data;
         }
-        
-        internal List<Bus> GetBuses(Directions direction)
-        {
-            IEnumerable<Bus> list = AllTheBuses(direction);
-            int result = GetTime();
-            List<Bus> resultList = new List<Bus>();
-            foreach (var item in list)
-            {
-                if(result < item.Value)
-                {
-                    resultList.Add(item);
-                }
-            }
-            return resultList;
-        }
-        private IEnumerable<Bus> AllTheBuses(Directions direction)
-        {
-            return Xml(XmlFiles[direction]);
-        }
         private int GetTime()
         {
-            DateTimeFormatter timeFormatter = new DateTimeFormatter("hour minute", new[] { "HU" });
-            string correctTime = timeFormatter.Format(DateTime.Now);
-            string stringTime = "";
-            foreach (var item in correctTime)
+            int hour = DateTime.Now.Hour*100;
+            int minute = DateTime.Now.Minute;
+            return hour + minute;
+        }
+        private void UpdatePossibleBuses(Directions direction, int currentTime)
+        {
+            List<Bus> newList = new List<Bus>();
+            bool isCurrent = false;
+            int index = 0;
+            while (!isCurrent)
             {
-                if (int.TryParse(item.ToString(), out int rea))
-                    stringTime += item;
+                if (currentTime > loadedBuses[direction][index].MilitaryTIme)
+                {
+                    loadedBuses[direction].RemoveAt(index);
+                }
+                else
+                {
+                    isCurrent = true;
+                }
             }
-            int.TryParse(stringTime, out int result);
-            return result;
+        }
+        private bool IsNotificationSet(string departing)
+        {
+            var notifications = ToastNotificationManager.CreateToastNotifier().GetScheduledToastNotifications();
+            foreach (var notif in notifications)
+            {
+                if (notif.Id.Equals(departing)) { return true; }
+            }
+            return false;
         }
     }
 }
