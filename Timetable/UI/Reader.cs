@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+using UI.Models;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
-using UI.Models;
 using Windows.ApplicationModel;
-using Windows.Data.Json;
-using Windows.Globalization;
-using Windows.Globalization.DateTimeFormatting;
-using Windows.Storage;
 using Windows.UI.Notifications;
+using System.Collections.Generic;
 
 namespace UI
 {
@@ -82,7 +74,6 @@ namespace UI
         }
         private void UpdatePossibleBuses(Directions direction, int currentTime)
         {
-            List<Bus> newList = new List<Bus>();
             bool isCurrent = false;
             int index = 0;
             while (!isCurrent)

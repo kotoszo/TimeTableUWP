@@ -1,19 +1,15 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using UI.Models;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace UI.Alarmer
 {
-    public class NotificationHandler
+    public static class NotificationHandler
     {
-        public void SetNotification(Bus bus, ListViewItem listItem)
+        public static void SetNotification(Bus bus, ListViewItem listItem)
         {
             listItem.Background = new SolidColorBrush(Windows.UI.Colors.LightGray);
             bus.IsSet = true;
@@ -38,7 +34,7 @@ namespace UI.Alarmer
             ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledNotif);
         }
 
-        public void RemoveNotification(Bus bus, ListViewItem listItem)
+        public static void RemoveNotification(Bus bus, ListViewItem listItem)
         {
             bus.IsSet = false;
             listItem.Background = new SolidColorBrush(Windows.UI.Colors.White);

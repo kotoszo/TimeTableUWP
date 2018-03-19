@@ -1,27 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using UI.Models;
+using UI.Alarmer;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using System.Xml;
-using Windows.Storage;
-using System.Xml.Linq;
-using Windows.Globalization.DateTimeFormatting;
-using Windows.Globalization;
-using UI.Models;
-using Microsoft.Toolkit.Uwp.Notifications;
-using UI.Alarmer;
-using Microsoft.QueryStringDotNET;
-using Windows.UI.Notifications;
+using Windows.UI.Xaml.Controls;
+using System.Collections.Generic;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -33,12 +16,11 @@ namespace UI
     public sealed partial class MainPage : Page
     {
         private Reader reader;
-        private NotificationHandler notifHandler;
+        
         public MainPage()
         {
             this.InitializeComponent();
             reader = new Reader();
-            notifHandler = new NotificationHandler();
         }
         private void ToSzteBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -93,11 +75,11 @@ namespace UI
             Bus bus = listItem.DataContext as Bus;
             if (!bus.IsSet)
             {
-                notifHandler.SetNotification(bus, listItem);
+                NotificationHandler.SetNotification(bus, listItem);
             }
             else
             {
-                notifHandler.RemoveNotification(bus, listItem);
+                NotificationHandler.RemoveNotification(bus, listItem);
             }
         }
     }
