@@ -6,13 +6,13 @@ using DataService.IModel.IResponse;
 namespace DataService.Model.Responses
 {
     [Serializable]
-    public class StationSearchResponse : IResponse<StationSearchResult>
+    public class StationResponse : IResponse<Station>
     {
         [JsonProperty(PropertyName = "status")]
         public string[] Status { get; set; }
 
         [JsonProperty(PropertyName = "results")]
-        public List<StationSearchResult> Results { get; set; }
+        public List<Station> Results { get; set; }
 
         public override string ToString()
         {

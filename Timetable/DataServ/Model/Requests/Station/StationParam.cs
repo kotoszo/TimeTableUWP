@@ -5,7 +5,7 @@ using DataService.IModel.IRequests;
 namespace DataService.Model.Requests
 {
     [Serializable]
-    public class StationSearchParam : IParam
+    public class StationParam : IParam
     {
         [JsonProperty(PropertyName = "inputText")]
         public string InputText { get; set; }

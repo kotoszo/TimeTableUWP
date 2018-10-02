@@ -4,7 +4,7 @@ using DataService.IModel.IResponse;
 
 namespace DataService.Model.Responses
 {
-	public class TimeTableResult : IResult
+	public class TimeTable : IResult
 	{
 		[JsonProperty(PropertyName = "settlement_name")]
 		public string SettlementName { get; set; }

@@ -5,7 +5,7 @@ using DataService.IModel.IResponse;
 namespace DataService.Model.Responses
 {
     [Serializable]
-    public class StationSearchResult : IResult
+    public class Station : IResult
     {
         [JsonProperty(PropertyName = "settlement_name")]
         public string SettlementName { get; set; }

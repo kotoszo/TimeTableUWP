@@ -5,13 +5,13 @@ namespace DataServiceTest
 {
     static class Helper
     {
-        internal static StationSearchRequest GetStationSearchRequest(string station)
+        internal static StationRequest GetStationSearchRequest(string station)
         {
             DateTime date = DateTime.Now;
-            StationSearchRequest request = new StationSearchRequest()
+            StationRequest request = new StationRequest()
             {
                 FunctionName = "getStationOrAddrByText",
-                Parameters = new StationSearchParam()
+                Parameters = new StationParam()
                 {
                     InputText = station,
                     SearchIn = new string[] { "stations" },

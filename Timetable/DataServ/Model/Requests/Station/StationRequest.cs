@@ -2,9 +2,8 @@
 
 namespace DataService.Model.Requests
 {
-    public class TimeTableRequest : IRequest
+    public class StationRequest : IRequest
     {
-
         public IParam Parameters { get; set; }
         public string FunctionName { get; set; }
 
