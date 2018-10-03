@@ -5,11 +5,7 @@ using DataService.Interface.Response;
 namespace DataService.Model.Responses
 {
     [Serializable]
-<<<<<<< Updated upstream:Timetable/DataServ/Model/Responses/StationSearch/Station.cs
-    public class Station:IResult
-=======
     public class Station : IResult
->>>>>>> Stashed changes:Timetable/DataServ/Model/Responses/StationSearch/StationSearchResult.cs
     {
         [JsonProperty(PropertyName = "settlement_name")]
         public string SettlementName { get; set; }
@@ -49,11 +45,7 @@ namespace DataService.Model.Responses
 
         public override string ToString()
         {
-<<<<<<< Updated upstream:Timetable/DataServ/Model/Responses/StationSearch/Station.cs
             return $"{LsName}";
-=======
-            return $"{LsId} {LsName}";
->>>>>>> Stashed changes:Timetable/DataServ/Model/Responses/StationSearch/StationSearchResult.cs
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using DataService.IModel.IResponse;
-using DataService.IModel.IRequests;
+using DataService.Interface.Response;
+using DataService.Interface.Request;
 
 namespace DataServ
 {
