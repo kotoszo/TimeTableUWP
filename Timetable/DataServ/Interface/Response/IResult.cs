@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace DataService.IModel.IResponse
+namespace DataService.Interface.Response
 {
     public interface IResult
     {

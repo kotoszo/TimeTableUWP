@@ -1,10 +1,14 @@
 ﻿using System;
 using Newtonsoft.Json;
-using DataService.IModel.IResponse;
+using DataService.Interface.Response;
 
 namespace DataService.Model.Responses
 {
+<<<<<<< Updated upstream
 	public class TimeTable : IResult
+=======
+    public class TimeTableResult : IResult
+>>>>>>> Stashed changes
 	{
 		[JsonProperty(PropertyName = "settlement_name")]
 		public string SettlementName { get; set; }

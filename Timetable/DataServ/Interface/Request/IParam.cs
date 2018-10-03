@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataService.IModel.IRequests
+namespace DataService.Interface.Request
 {
     public interface IParam
     {

@@ -1,7 +1,11 @@
 ﻿using System;
 using Newtonsoft.Json;
+<<<<<<< Updated upstream:Timetable/DataServ/Model/Requests/Station/StationParam.cs
 using DataService.IModel.IRequests;
 using DataService.BaseF;
+=======
+using DataService.Interface.Request;
+>>>>>>> Stashed changes:Timetable/DataServ/Model/Requests/StationSearch/StationSearchParam.cs
 
 namespace DataService.Model.Requests
 {

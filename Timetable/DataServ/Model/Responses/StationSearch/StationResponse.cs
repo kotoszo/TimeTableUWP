@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using DataService.IModel.IResponse;
+using DataService.Interface.Response;
 
 namespace DataService.Model.Responses
 {
@@ -12,7 +12,11 @@ namespace DataService.Model.Responses
         public string[] Status { get; set; }
 
         [JsonProperty(PropertyName = "results")]
+<<<<<<< Updated upstream:Timetable/DataServ/Model/Responses/StationSearch/StationResponse.cs
         public List<Station> Results { get; set; }
+=======
+        public List<Station> Stations { get; set; }
+>>>>>>> Stashed changes:Timetable/DataServ/Model/Responses/StationSearch/StationSearchResponse.cs
 
         public override string ToString()
         {

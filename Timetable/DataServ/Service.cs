@@ -4,8 +4,8 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
-using DataService.IModel.IResponse;
-using DataService.IModel.IRequests;
+using DataService.Interface.Request;
+using DataService.Interface.Response;
 
 namespace DataService
 {
@@ -28,6 +28,13 @@ namespace DataService
         public async Task<TResponse> GetResponse<TResponse, TResult, TRequest>(TRequest requestToSend)
             where TResponse:IResponse<TResult> where TRequest:IRequest where TResult:IResult
         {
+<<<<<<< Updated upstream
+=======
+            string requestBody = JsonConvert.SerializeObject(requestToSend, setting);
+            var httpContent = new StringContent(requestBody, Encoding.UTF8, "application/json");
+            TResponse response = default(TResponse);
+            
+>>>>>>> Stashed changes
             using (HttpClient httpClient = new HttpClient())
             {
                 StringContent httpContent = GetContent(requestToSend);

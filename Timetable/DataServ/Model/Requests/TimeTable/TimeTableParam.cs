@@ -1,8 +1,14 @@
+<<<<<<< Updated upstream
 ﻿using DataService.BaseF;
 using DataService.IModel.IRequests;
 using DataService.Model.Responses;
 using Newtonsoft.Json;
 using System;
+=======
+﻿using System;
+using Newtonsoft.Json;
+using DataService.Interface.Request;
+>>>>>>> Stashed changes
 
 namespace DataService.Model.Requests
 {

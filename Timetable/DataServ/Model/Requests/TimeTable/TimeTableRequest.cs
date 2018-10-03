@@ -1,4 +1,4 @@
-﻿using DataService.IModel.IRequests;
+﻿using DataService.Interface.Request;
 
 namespace DataService.Model.Requests
 {
