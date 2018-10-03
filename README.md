@@ -10,3 +10,6 @@ If anyone would take a look and discovers something, feel free to contact me! :)
 
 Funny part:
 *I had to manually type all the data into the XMLs, because the Volánbusz Transport Company doesn't share their API.
+
+
+update: i found a workaround to send post requests to the site. big changes incoming :)
