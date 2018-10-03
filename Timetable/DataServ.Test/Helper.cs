@@ -7,21 +7,15 @@ namespace DataServiceTest
     {
         internal static StationRequest GetStationSearchRequest(string station)
         {
-            DateTime date = DateTime.Now;
-            StationRequest request = new StationRequest()
-            {
-                FunctionName = "getStationOrAddrByText",
-                Parameters = new StationParam()
-                {
-                    InputText = station,
-                    SearchIn = new string[] { "stations" },
-                    Date = $"{date.Year}-{date.Month}-{date.Day}",
-                    MaxResults = 120,
-                    Networks = new int[] { 1, 2, 3 },
-                    CurrentLang = "hu"
-                }
-            };
-            return request;
+            return new StationRequest(
+                station,
+                DateTime.Now, 
+                "getStationOrAddrByText",
+                new string[] { "stations" },
+                120, 
+                new short[] { 1, 2, 3 }, 
+                "hu"
+            );
         }
     }
 }

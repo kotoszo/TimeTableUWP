@@ -1,11 +1,12 @@
-﻿using DataService.Model.Responses;
+﻿using DataService.Model.Requests;
+using DataService.Model.Responses;
 
 namespace DataManager.Interface
 {
     public interface IResponseFactory
     {
-        StationResponse GetStationResponse();
+        StationResponse StationResponse(StationRequest request);
 
-        TimeTableResponse GetTimeTableResponse();
+        TimeTableResponse TimeTableResponse(TimeTableRequest request);
     }
 }

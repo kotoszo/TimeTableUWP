@@ -5,7 +5,7 @@ using DataService.IModel.IResponse;
 namespace DataService.Model.Responses
 {
     [Serializable]
-    public class Station : IResult
+    public class Station:IResult
     {
         [JsonProperty(PropertyName = "settlement_name")]
         public string SettlementName { get; set; }
@@ -45,7 +45,7 @@ namespace DataService.Model.Responses
 
         public override string ToString()
         {
-            return $"{SettlementName} {LsName}";
+            return $"{LsName}";
         }
     }
 }

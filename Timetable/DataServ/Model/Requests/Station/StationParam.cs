@@ -1,12 +1,25 @@
 ﻿using System;
 using Newtonsoft.Json;
 using DataService.IModel.IRequests;
+using DataService.BaseF;
 
 namespace DataService.Model.Requests
 {
     [Serializable]
     public class StationParam : IParam
     {
+        public StationParam() { }
+
+        public StationParam(string stationName, DateTime date, string currentLang = null, short maxResults = 0, short[] networks = null, string[] searchIn = null)
+        {
+            InputText = stationName;
+            Date = $"{date.Year}-{date.Month}-{date.Day}";
+            CurrentLang = currentLang ?? StationRequestBase.CurrentLang;
+            MaxResults = maxResults > 0 ? maxResults : StationRequestBase.MaxResults;
+            Networks = networks ?? StationRequestBase.Networks;
+            SearchIn = searchIn ?? StationRequestBase.SearchIn;
+        }
+
         [JsonProperty(PropertyName = "inputText")]
         public string InputText { get; set; }
 
@@ -20,24 +33,9 @@ namespace DataService.Model.Requests
         public int MaxResults { get; set; }
 
         [JsonProperty(PropertyName = "networks")]
-        public int[] Networks { get; set; }
+        public short[] Networks { get; set; }
 
         [JsonProperty(PropertyName = "currentLang")]
         public string CurrentLang { get; set; }
-        
-        //{
-        //"func": "getStationOrAddrByText",
-        //"params": {
-        //    "inputText": "szentendre",
-        //    "searchIn": 
-
-        //    ["stations"],
-        //    "searchDate": "2018-09-28",
-        //    "maxResults": 30,
-        //    "networks": [1,
-        //    2,
-        //    3],
-        //    "currentLang": "hu"
-        //}
     }
 }

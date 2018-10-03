@@ -1,15 +1,13 @@
-﻿using DataService.IModel.IRequests;
+﻿using System;
 using DataService.Model.Requests;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using DataService.Model.Responses;
 
 namespace DataManager.Interface
 {
     public interface IRequestFactory 
     {
-        StationRequest GetStationRequest();
+        StationRequest StationRequest(string stationName);
 
-        TimeTableRequest GetTimeTableRequest();
+        TimeTableRequest TimeTableRequest(Station from, Station to, DateTime date);
     }
 }

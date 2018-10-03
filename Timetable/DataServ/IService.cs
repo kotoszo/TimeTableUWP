@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
 using DataService.IModel.IResponse;
 using DataService.IModel.IRequests;
-using System.Threading.Tasks;
 
 namespace DataServ
 {
     public interface IService
     {
-        Task<TResponse> GetData<TResponse, TResult, TRequest>(TRequest requestToSend)
+        Task<TResponse> GetResponse<TResponse, TResult, TRequest>(TRequest requestToSend)
             where TResponse:IResponse<TResult> where TRequest:IRequest where TResult:IResult;
+
+        IRequest GetRequest<TRequest>(string funcName, IParam param) where TRequest:IRequest,new();
     }
 }

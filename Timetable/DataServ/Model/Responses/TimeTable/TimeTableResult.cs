@@ -13,7 +13,7 @@ namespace DataService.Model.Responses
 		public string LsName { get; set; }
 
 		[JsonProperty(PropertyName = "ls_id")]
-		public short LsId { get; set; }
+		public int LsId { get; set; }
 
 		[JsonProperty(PropertyName = "site_code")]
 		public short SiteCode { get; set; }

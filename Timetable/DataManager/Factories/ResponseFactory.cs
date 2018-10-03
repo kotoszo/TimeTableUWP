@@ -1,5 +1,6 @@
 ﻿using System;
 using DataManager.Interface;
+using DataService.Model.Requests;
 using DataService.Model.Responses;
 
 namespace DataManager.Factories
@@ -12,6 +13,16 @@ namespace DataManager.Factories
         }
 
         public TimeTableResponse GetTimeTableResponse()
+        {
+            throw new NotImplementedException();
+        }
+
+        public StationResponse StationResponse(StationRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TimeTableResponse TimeTableResponse(TimeTableRequest request)
         {
             throw new NotImplementedException();
         }

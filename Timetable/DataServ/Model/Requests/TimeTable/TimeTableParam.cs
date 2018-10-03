@@ -1,12 +1,71 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using DataService.BaseF;
 using DataService.IModel.IRequests;
+using DataService.Model.Responses;
+using Newtonsoft.Json;
+using System;
 
 namespace DataService.Model.Requests
 {
     [Serializable]
     public class TimeTableParam : IParam
     {
+        public TimeTableParam() { }
+
+        public TimeTableParam(Station from, Station to, DateTime date, 
+            string erk_type = null, string ext_settings = null, short? filtering = null, 
+            string helyi = null, string ind_stype = null, string keresztul_stype = null, 
+            string maxatszallas = null, string maxvar = null, string maxwalk = null, 
+            string min = null, short? napszak = null, short? naptipus = null, short? odavissza = null, 
+            string preferencia = null, string rendezes = null, string submitted = null, 
+            int? talalatok = null, short? target = null, string utirany = null, string var = null)
+        {
+            Date = $"{date.Year}-{date.Month}-{date.Day}";
+            SearchType = erk_type ?? TimeTableRequestBase.erk_type;
+            ExtraSettings = ext_settings ?? TimeTableRequestBase.ext_settings;
+            Filtering = filtering ?? TimeTableRequestBase.filtering;
+            IsLocal = helyi ?? TimeTableRequestBase.helyi;
+            SearchType2 = ind_stype ?? TimeTableRequestBase.ind_stype;
+            ThroughSearchType = keresztul_stype ?? TimeTableRequestBase.keresztul_stype;
+            MaxTransferChange = maxatszallas ?? TimeTableRequestBase.maxatszallas;
+            MaxVar = maxvar ?? TimeTableRequestBase.maxvar;
+            MaxMeterToWalk = maxwalk ?? TimeTableRequestBase.maxwalk;
+            Minute = min ?? TimeTableRequestBase.min;
+            PartOfTheDay = napszak ?? TimeTableRequestBase.napszak;
+            DayType = naptipus ?? TimeTableRequestBase.napszak;
+            WithReturn = odavissza ?? TimeTableRequestBase.odavissza;
+            Preference = preferencia ?? TimeTableRequestBase.preferencia;
+            IsSorted = rendezes ?? TimeTableRequestBase.rendezes;
+            Submitted = submitted ?? TimeTableRequestBase.submitted;
+            FindCont = talalatok ?? TimeTableRequestBase.talalatok;
+            Target = target ?? TimeTableRequestBase.target;
+            Track = utirany ?? TimeTableRequestBase.utirany;
+            Var = var ?? TimeTableRequestBase.var;
+
+            FromStation(from);
+            ToStation(to);
+        }
+        private void FromStation(Station station)
+        {
+            From = station.LsName;
+            FromCoordinateX = station.CoordinateX;
+            FromCoordinateY = station.CoordinateY;
+            FromStationId = station.LsId;
+            FromCityId = station.SettlementId;
+            FromSiteCode = int.Parse(station.SiteCode);
+            FromZoom = station.Zoom;
+        }
+
+        private void ToStation(Station station)
+        {
+            To = station.LsName;
+            ToCoordinateX = station.CoordinateX;
+            ToCoordinateY = station.CoordinateY;
+            ToStationId = station.LsId;
+            ToCityId = station.SettlementId;
+            ToSiteCode = int.Parse(station.SiteCode);
+            ToZoom = station.Zoom;
+        }
+
         [JsonProperty(PropertyName = "datum")]
         public string Date { get; set; }
 
@@ -20,7 +79,7 @@ namespace DataService.Model.Requests
         public int Filtering { get; set; }
 
         [JsonProperty(PropertyName = "helyi")]
-        public bool IsLocal { get; set; }
+        public string IsLocal { get; set; }
 
         [JsonProperty(PropertyName = "honnan")]
         public string From { get; set; }
@@ -74,16 +133,16 @@ namespace DataService.Model.Requests
         public string ThroughSearchType { get; set; }
 
         [JsonProperty(PropertyName = "maxatszallas")]
-        public short MaxTransferChange { get; set; }
+        public string MaxTransferChange { get; set; }
 
         [JsonProperty(PropertyName = "maxvar")]
-        public short MaxVar { get; set; }
+        public string MaxVar { get; set; }
 
         [JsonProperty(PropertyName = "maxwalk")]
-        public short MaxMeterToWalk { get; set; }
+        public string MaxMeterToWalk { get; set; }
 
         [JsonProperty(PropertyName = "min")]
-        public short Minute { get; set; }
+        public string Minute { get; set; }
 
         [JsonProperty(PropertyName = "napszak")]
         public short PartOfTheDay { get; set; }
@@ -92,27 +151,27 @@ namespace DataService.Model.Requests
         public short DayType { get; set; }
 
         [JsonProperty(PropertyName = "odavissza")]
-        public bool WithReturn { get; set; }
+        public short WithReturn { get; set; }
 
         [JsonProperty(PropertyName = "preferencia")]
-        public bool Preference { get; set; }
+        public string Preference { get; set; }
 
         [JsonProperty(PropertyName = "rendezes")]
-        public bool IsSorted { get; set; }
+        public string IsSorted { get; set; }
 
         [JsonProperty(PropertyName = "submitted")]
-        public bool Submitted { get; set; }
+        public string Submitted { get; set; }
 
         [JsonProperty(PropertyName = "talalatok")]
         public int FindCont { get; set; }
 
         [JsonProperty(PropertyName = "target")]
-        public bool Target { get; set; }
+        public short Target { get; set; }
 
         [JsonProperty(PropertyName = "utirany")]
         public string Track { get; set; }
 
         [JsonProperty(PropertyName = "var")]
-        public bool Var { get; set; }
+        public string Var { get; set; }
     }
 }

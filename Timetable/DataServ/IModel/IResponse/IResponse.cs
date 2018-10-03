@@ -2,10 +2,10 @@
 
 namespace DataService.IModel.IResponse
 {
-    public interface IResponse<T> where T:IResult
+    public interface IResponse<TResult> where TResult : IResult
     {
         string[] Status { get; set; }
 
-        List<T> Results { get; set; }
+        List<TResult> Results { get; set; }
     }
 }

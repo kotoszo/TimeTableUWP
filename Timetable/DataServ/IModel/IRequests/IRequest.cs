@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace DataService.IModel.IRequests
 {
@@ -9,5 +10,7 @@ namespace DataService.IModel.IRequests
 
         [JsonProperty(PropertyName = "params")]
         IParam Parameters {get;set;}
+
+        void LoadObjects(IParam obj);
     }
 }
