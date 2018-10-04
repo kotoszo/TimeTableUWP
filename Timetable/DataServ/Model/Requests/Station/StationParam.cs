@@ -1,14 +1,16 @@
-﻿using System;
-using Newtonsoft.Json;
-using DataService.BaseF;
+﻿using DataService.BaseF;
 using DataService.Interface.Request;
+using Newtonsoft.Json;
+using System;
 
 namespace DataService.Model.Requests
 {
     [Serializable]
     public class StationParam : IParam
     {
-        public StationParam() { }
+        public StationParam()
+        {
+        }
 
         public StationParam(string stationName, DateTime date, string currentLang = null, short maxResults = 0, short[] networks = null, string[] searchIn = null)
         {

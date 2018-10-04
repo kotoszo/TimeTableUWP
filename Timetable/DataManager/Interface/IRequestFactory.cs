@@ -1,10 +1,10 @@
-﻿using System;
-using DataService.Model.Requests;
+﻿using DataService.Model.Requests;
 using DataService.Model.Responses;
+using System;
 
 namespace DataManager.Interface
 {
-    public interface IRequestFactory 
+    public interface IRequestFactory
     {
         StationRequest StationRequest(string stationName);
 

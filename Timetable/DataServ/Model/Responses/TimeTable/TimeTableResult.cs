@@ -1,44 +1,30 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using DataServ.Model.Responses.TimeTable;
 using DataService.Interface.Response;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 
 namespace DataService.Model.Responses
 {
-	public class TimeTable : IResult
-	{
-		[JsonProperty(PropertyName = "settlement_name")]
-		public string SettlementName { get; set; }
+    public class TimeTable : IResult
+    {
+        [JsonProperty(PropertyName = "napkiiras")]
+        public string DayWrittenFormat { get; set; }
 
-		[JsonProperty(PropertyName = "lsname")]
-		public string LsName { get; set; }
+        public DateTime DateGot { get; set; }
 
-		[JsonProperty(PropertyName = "ls_id")]
-		public int LsId { get; set; }
+        [JsonProperty(PropertyName = "daytype_got")]
+        public short DayType { get; set; }
 
-		[JsonProperty(PropertyName = "site_code")]
-		public short SiteCode { get; set; }
+        [JsonProperty(PropertyName = "apache_hostname")]
+        public string ApacheHostName { get; set; }
 
-		[JsonProperty(PropertyName = "settlement_id")]
-		public int SettlementId { get; set; }
+        [JsonProperty(PropertyName = "talalatok")]
+        public Tables Tables { get; set; }
 
-		[JsonProperty(PropertyName = "eovx")]
-		public double CoordinateX { get; set; }
-
-		[JsonProperty(PropertyName = "eovy")]
-		public double CoordinateY { get; set; }
-
-		[JsonProperty(PropertyName = "zoom")]
-		public int Zoom { get; set; }
-
-		[JsonProperty(PropertyName = "type")]
-		public string Type { get; set; }
-
-		[JsonProperty(PropertyName = "geomEov")]
-		public GeoPoint GeoEov { get; set; }
-
-		[JsonProperty(PropertyName = "geomWgs")]
-		public GeoPoint GeoWgs { get; set; }
-
-		public DateTime DateGot { get; set; }
-	}
+        public override string ToString()
+        {
+            return $"{DateGot} {ApacheHostName}";
+        }
+    }
 }

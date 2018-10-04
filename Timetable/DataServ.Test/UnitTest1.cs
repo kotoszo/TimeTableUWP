@@ -1,17 +1,17 @@
-using System;
 using DataServ;
 using DataService;
-using NUnit.Framework;
-using System.Threading.Tasks;
 using DataService.Model.Requests;
 using DataService.Model.Responses;
+using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
 
 namespace DataServiceTest
 {
     [TestFixture]
     public class UnitTest1
     {
-        IService service;
+        private IService service;
 
         [OneTimeSetUp]
         public void setup()
@@ -19,7 +19,7 @@ namespace DataServiceTest
             service = new Service();
         }
 
-        [TestCase("szentendre", "hu", 120, new short[]{1,2,3}, new string[] { "stations"})]
+        [TestCase("szentendre", "hu", 120, new short[] { 1, 2, 3 }, new string[] { "stations" })]
         public void StationRequest_Should_Succeed(string stationName, string currentLang, short maxResults, short[] networks, string[] searchIn)
         {
             DateTime date = DateTime.Now;
@@ -52,7 +52,7 @@ namespace DataServiceTest
         {
             var request = Helper.GetStationSearchRequest(station);
             var result = await service.GetResponse<StationResponse, Station, StationRequest>(request);
-            
+
             Assert.IsFalse(result.Results.Count > 0);
         }
     }

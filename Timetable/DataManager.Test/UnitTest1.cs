@@ -7,8 +7,8 @@ namespace DataManager.Test
     [TestFixture]
     public class UnitTest1
     {
-        Manager manager;
-        
+        private Manager manager;
+
         [OneTimeSetUp]
         public void Setup()
         {
@@ -16,7 +16,7 @@ namespace DataManager.Test
         }
 
         [TestCase("Szentendre")]
-        public void TestMethod1(string station)
+        public void GetStations_Test(string station)
         {
             var stations = manager.GetStations(station, DateTime.Now);
 
@@ -24,7 +24,7 @@ namespace DataManager.Test
         }
 
         [TestCase("Szentendre")]
-        public void testmethod2(string station)
+        public void GetTimeTable_Test(string station)
         {
             DateTime date = DateTime.Now;
             var stations = manager.GetStations(station, date);
@@ -33,6 +33,8 @@ namespace DataManager.Test
             Station ToStation = stations[2];
 
             var timetables = manager.GetTimeTables(fromStation, ToStation, date);
+
+            Assert.IsNotNull(timetables.Tables.GetTable);
         }
     }
 }

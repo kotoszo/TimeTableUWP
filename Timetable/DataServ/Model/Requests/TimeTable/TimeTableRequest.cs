@@ -4,7 +4,6 @@ namespace DataService.Model.Requests
 {
     public class TimeTableRequest : IRequest
     {
-
         public IParam Parameters { get; set; }
         public string FunctionName { get; set; }
 

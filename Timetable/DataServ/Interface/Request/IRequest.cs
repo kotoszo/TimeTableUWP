@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace DataService.Interface.Request
 {
@@ -9,7 +8,7 @@ namespace DataService.Interface.Request
         string FunctionName { get; set; }
 
         [JsonProperty(PropertyName = "params")]
-        IParam Parameters {get;set;}
+        IParam Parameters { get; set; }
 
         void LoadObjects(IParam obj);
     }

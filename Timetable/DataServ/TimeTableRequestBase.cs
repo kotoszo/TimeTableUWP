@@ -20,7 +20,7 @@
 
         internal static readonly string preferencia = "0";
         internal static readonly string rendezes = "1";
-        internal static readonly string submitted = "1";
+        internal static readonly short submitted = 1;
         internal static readonly int talalatok = 1;
         internal static readonly short target = 0;
         internal static readonly string utirany = "oda";

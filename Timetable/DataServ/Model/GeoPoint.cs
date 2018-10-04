@@ -4,7 +4,7 @@
     {
         public string Type { get; set; }
 
-        public double[] Coordinates{ get; set; }
+        public double[] Coordinates { get; set; }
 
         public override string ToString()
         {

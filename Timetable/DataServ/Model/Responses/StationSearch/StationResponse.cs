@@ -1,7 +1,7 @@
-﻿using System;
+﻿using DataService.Interface.Response;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using DataService.Interface.Response;
 
 namespace DataService.Model.Responses
 {
@@ -12,7 +12,6 @@ namespace DataService.Model.Responses
         public string[] Status { get; set; }
 
         [JsonProperty(PropertyName = "results")]
-
         public List<Station> Results { get; set; }
 
         public override string ToString()

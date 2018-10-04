@@ -1,11 +1,10 @@
-﻿using System;
-using DataServ;
-using System.Text;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using DataServ;
 using DataService.Interface.Request;
 using DataService.Interface.Response;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DataService
 {
@@ -14,7 +13,7 @@ namespace DataService
         private readonly HttpClient client = new HttpClient();
         private readonly string uri = @"https://menetrendek.hu/menetrend/interface/index.php";
         private readonly JsonSerializerSettings setting = new JsonSerializerSettings { DateFormatHandling = DateFormatHandling.MicrosoftDateFormat };
-        
+
         public IRequest GetRequest<TRequest>(string funcName, IParam param) where TRequest : IRequest, new()
         {
             TRequest request = new TRequest
@@ -24,15 +23,15 @@ namespace DataService
             };
             return request;
         }
-        
+
         public async Task<TResponse> GetResponse<TResponse, TResult, TRequest>(TRequest requestToSend)
-            where TResponse:IResponse<TResult> where TRequest:IRequest where TResult:IResult
+            where TResponse : IResponse<TResult> where TRequest : IRequest where TResult : IResult
         {
             using (HttpClient httpClient = new HttpClient())
             {
                 StringContent httpContent = GetContent(requestToSend);
                 HttpResponseMessage httpResponse = await httpClient.PostAsync(uri, httpContent);
-                
+
                 if (httpResponse.Content != null)
                 {
                     string responseContent = await httpResponse.Content.ReadAsStringAsync();
@@ -47,6 +46,5 @@ namespace DataService
             string requestBody = JsonConvert.SerializeObject(requestToSend, setting);
             return new StringContent(requestBody, Encoding.UTF8, "application/json");
         }
-        
     }
 }

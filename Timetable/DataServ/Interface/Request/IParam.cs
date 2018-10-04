@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DataService.Interface.Request
+﻿namespace DataService.Interface.Request
 {
     public interface IParam
     {

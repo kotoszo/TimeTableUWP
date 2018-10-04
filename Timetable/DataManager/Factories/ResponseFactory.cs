@@ -1,7 +1,7 @@
-﻿using System;
-using DataManager.Interface;
+﻿using DataManager.Interface;
 using DataService.Model.Requests;
 using DataService.Model.Responses;
+using System;
 
 namespace DataManager.Factories
 {

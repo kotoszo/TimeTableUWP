@@ -5,7 +5,9 @@ namespace DataService.Model.Requests
 {
     public class StationRequest : IRequest
     {
-        public StationRequest() { }
+        public StationRequest()
+        {
+        }
 
         public StationRequest(string station, DateTime date, string funcName, string[] searchIn, short maxResults, short[] networks, string currentLang)
         {
@@ -20,11 +22,11 @@ namespace DataService.Model.Requests
                 SearchIn = searchIn
             };
         }
-        
+
         public IParam Parameters { get; set; }
 
         public string FunctionName { get; set; }
-        
+
         public void LoadObjects(IParam param)
         {
             throw new NotImplementedException();

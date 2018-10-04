@@ -1,22 +1,24 @@
 ﻿using DataService.BaseF;
+using DataService.Interface.Request;
 using DataService.Model.Responses;
 using Newtonsoft.Json;
 using System;
-using DataService.Interface.Request;
 
 namespace DataService.Model.Requests
 {
     [Serializable]
     public class TimeTableParam : IParam
     {
-        public TimeTableParam() { }
+        public TimeTableParam()
+        {
+        }
 
-        public TimeTableParam(Station from, Station to, DateTime date, 
-            string erk_type = null, string ext_settings = null, short? filtering = null, 
-            string helyi = null, string ind_stype = null, string keresztul_stype = null, 
-            string maxatszallas = null, string maxvar = null, string maxwalk = null, 
-            string min = null, short? napszak = null, short? naptipus = null, short? odavissza = null, 
-            string preferencia = null, string rendezes = null, string submitted = null, 
+        public TimeTableParam(Station from, Station to, DateTime date,
+            string erk_type = null, string ext_settings = null, short? filtering = null,
+            string helyi = null, string ind_stype = null, string keresztul_stype = null,
+            string maxatszallas = null, string maxvar = null, string maxwalk = null,
+            string min = null, short? napszak = null, short? naptipus = null, short? odavissza = null,
+            string preferencia = null, string rendezes = null, short? submitted = null,
             int? talalatok = null, short? target = null, string utirany = null, string var = null)
         {
             Date = $"{date.Year}-{date.Month}-{date.Day}";
@@ -31,7 +33,7 @@ namespace DataService.Model.Requests
             MaxMeterToWalk = maxwalk ?? TimeTableRequestBase.maxwalk;
             Minute = min ?? TimeTableRequestBase.min;
             PartOfTheDay = napszak ?? TimeTableRequestBase.napszak;
-            DayType = naptipus ?? TimeTableRequestBase.napszak;
+            DayType = naptipus ?? TimeTableRequestBase.naptipus;
             WithReturn = odavissza ?? TimeTableRequestBase.odavissza;
             Preference = preferencia ?? TimeTableRequestBase.preferencia;
             IsSorted = rendezes ?? TimeTableRequestBase.rendezes;
@@ -44,6 +46,7 @@ namespace DataService.Model.Requests
             FromStation(from);
             ToStation(to);
         }
+
         private void FromStation(Station station)
         {
             From = station.LsName;
@@ -160,7 +163,7 @@ namespace DataService.Model.Requests
         public string IsSorted { get; set; }
 
         [JsonProperty(PropertyName = "submitted")]
-        public string Submitted { get; set; }
+        public short Submitted { get; set; }
 
         [JsonProperty(PropertyName = "talalatok")]
         public int FindCont { get; set; }
