@@ -5,77 +5,77 @@ namespace DataServ.Model.Responses.TimeTable
     public class RouteInfo
     {
         [JsonProperty(PropertyName = "prebuy")]
-        public bool prebuy { get; set; }
+        public bool IsPrebuyAvailable { get; set; }
 
         [JsonProperty(PropertyName = "alacsonypadlos")]
-        public bool alacsonypadlos { get; set; }
+        public bool IsLowFloor { get; set; }
 
         [JsonProperty(PropertyName = "network")]
-        public bool network { get; set; }
+        public bool IsNetwork { get; set; }
 
         [JsonProperty(PropertyName = "nagysebessegu")]
-        public bool nagysebessegu { get; set; }
+        public bool IsHighSpeed { get; set; }
 
         [JsonProperty(PropertyName = "jelleg")]
-        public string jelleg { get; set; }
+        public string Nature { get; set; }
 
         [JsonProperty(PropertyName = "emeltszintu")]
-        public bool emeltszintu { get; set; }
+        public bool IsHighFloor { get; set; }
 
         [JsonProperty(PropertyName = "vonalnev")]
-        public string vonalnev { get; set; }
+        public string RouteName { get; set; }
 
         [JsonProperty(PropertyName = "wifi")]
-        public bool wifi { get; set; }
+        public bool IsWifi { get; set; }
 
         [JsonProperty(PropertyName = "internet")]
-        public bool internet { get; set; }
+        public bool IsInternet { get; set; }
 
         [JsonProperty(PropertyName = "internetes_jegy")]
-        public bool internetes_jegy { get; set; }
+        public bool IsOnlineTicktet { get; set; }
 
         [JsonProperty(PropertyName = "terelout")]
-        public bool terelout { get; set; }
+        public bool Detour { get; set; }
 
         [JsonProperty(PropertyName = "vonalelnevezes")]
-        public string vonalelnevezes { get; set; }
+        public string RouteNaming { get; set; }
 
         [JsonProperty(PropertyName = "remark")]
-        public string remark { get; set; }
+        public string Remark { get; set; }
 
         [JsonProperty(PropertyName = "distance")]
-        public double distance { get; set; }
+        public double Distance { get; set; }
 
         [JsonProperty(PropertyName = "fare")]
-        public short fare { get; set; }
+        public short Fare { get; set; }
 
         [JsonProperty(PropertyName = "no_discountable_fare")]
-        public bool no_discountable_fare { get; set; }
+        public bool IsDiscountable { get; set; }
 
         [JsonProperty(PropertyName = "additional_ticket_price")]
-        public short additional_ticket_price { get; set; }
+        public short AdditionalTicketPrice { get; set; }
 
         [JsonProperty(PropertyName = "seat_ticket_price")]
-        public short seat_ticket_price { get; set; }
+        public short SeatTicketPrice { get; set; }
 
         [JsonProperty(PropertyName = "train_cat")]
-        public string train_cat { get; set; }
+        public string TrainCat { get; set; }
 
         [JsonProperty(PropertyName = "fare_50_percent")]
-        public short fare_50_percent { get; set; }
+        public short Fare50Percent { get; set; }
 
         [JsonProperty(PropertyName = "fare_90_percent")]
-        public short fare_90_percent { get; set; }
+        public short Fare90Percent { get; set; }
 
         [JsonProperty(PropertyName = "dcLsId")]
-        public int dcLsId { get; set; }
+        public int DcLsId { get; set; }
 
         [JsonProperty(PropertyName = "bube_accepted")]
-        public bool bube_accepted { get; set; }
+        public bool IsBubeAccepted { get; set; }
 
         public override string ToString()
         {
-            return $"Route:{vonalnev}, Price:{fare}Ft";
+            return $"Route:{RouteName}, Price:{Fare}Ft";
         }
     }
 }

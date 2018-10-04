@@ -1,6 +1,6 @@
-﻿using DataService.Interface.Response;
+﻿using System;
 using Newtonsoft.Json;
-using System;
+using DataService.Interface.Response;
 
 namespace DataService.Model.Responses
 {

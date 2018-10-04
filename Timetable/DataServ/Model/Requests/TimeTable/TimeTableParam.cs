@@ -1,8 +1,8 @@
-﻿using DataService.BaseF;
-using DataService.Interface.Request;
-using DataService.Model.Responses;
+﻿using System;
 using Newtonsoft.Json;
-using System;
+using DataService.BaseF;
+using DataService.Model.Responses;
+using DataService.Interface.Request;
 
 namespace DataService.Model.Requests
 {
@@ -14,17 +14,17 @@ namespace DataService.Model.Requests
         }
 
         public TimeTableParam(Station from, Station to, DateTime date,
-            string erk_type = null, string ext_settings = null, short? filtering = null,
+            string erk_type = null, string ext_settings = null, bool filtering = false,
             string helyi = null, string ind_stype = null, string keresztul_stype = null,
             string maxatszallas = null, string maxvar = null, string maxwalk = null,
-            string min = null, short? napszak = null, short? naptipus = null, short? odavissza = null,
-            string preferencia = null, string rendezes = null, short? submitted = null,
+            string min = null, short? napszak = null, short? naptipus = null, bool odavissza = false,
+            string preferencia = null, string rendezes = null, bool submitted = false,
             int? talalatok = null, short? target = null, string utirany = null, string var = null)
         {
             Date = $"{date.Year}-{date.Month}-{date.Day}";
             SearchType = erk_type ?? TimeTableRequestBase.erk_type;
             ExtraSettings = ext_settings ?? TimeTableRequestBase.ext_settings;
-            Filtering = filtering ?? TimeTableRequestBase.filtering;
+            IsFiltered = filtering;
             IsLocal = helyi ?? TimeTableRequestBase.helyi;
             SearchType2 = ind_stype ?? TimeTableRequestBase.ind_stype;
             ThroughSearchType = keresztul_stype ?? TimeTableRequestBase.keresztul_stype;
@@ -34,10 +34,10 @@ namespace DataService.Model.Requests
             Minute = min ?? TimeTableRequestBase.min;
             PartOfTheDay = napszak ?? TimeTableRequestBase.napszak;
             DayType = naptipus ?? TimeTableRequestBase.naptipus;
-            WithReturn = odavissza ?? TimeTableRequestBase.odavissza;
+            WithReturn = odavissza;
             Preference = preferencia ?? TimeTableRequestBase.preferencia;
             IsSorted = rendezes ?? TimeTableRequestBase.rendezes;
-            Submitted = submitted ?? TimeTableRequestBase.submitted;
+            Submitted = submitted;
             FindCont = talalatok ?? TimeTableRequestBase.talalatok;
             Target = target ?? TimeTableRequestBase.target;
             Track = utirany ?? TimeTableRequestBase.utirany;
@@ -79,7 +79,7 @@ namespace DataService.Model.Requests
         public string ExtraSettings { get; set; }
 
         [JsonProperty(PropertyName = "filtering")]
-        public int Filtering { get; set; }
+        public bool IsFiltered { get; set; }
 
         [JsonProperty(PropertyName = "helyi")]
         public string IsLocal { get; set; }
@@ -154,7 +154,7 @@ namespace DataService.Model.Requests
         public short DayType { get; set; }
 
         [JsonProperty(PropertyName = "odavissza")]
-        public short WithReturn { get; set; }
+        public bool WithReturn { get; set; }
 
         [JsonProperty(PropertyName = "preferencia")]
         public string Preference { get; set; }
@@ -163,7 +163,7 @@ namespace DataService.Model.Requests
         public string IsSorted { get; set; }
 
         [JsonProperty(PropertyName = "submitted")]
-        public short Submitted { get; set; }
+        public bool Submitted { get; set; }
 
         [JsonProperty(PropertyName = "talalatok")]
         public int FindCont { get; set; }

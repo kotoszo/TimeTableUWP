@@ -1,3 +1,4 @@
+using DataServ.Model.Responses.TimeTable;
 using DataService.Model.Responses;
 using NUnit.Framework;
 using System;

@@ -1,13 +1,13 @@
-﻿using DataServ;
+﻿using System;
+using DataServ;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 using DataServ.IModel.IRequests;
 using DataServ.IModel.IResponse;
-using DataServ.Model.Responses.TimeTable;
+using System.Collections.Generic;
 using DataService.Model.Requests;
 using DataService.Model.Responses;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using DataServ.Model.Responses.TimeTable;
 
 namespace DataManager
 {
@@ -44,8 +44,8 @@ namespace DataManager
             {
                 timeTable.Tables.GetTable.Add(item.Value.ToObject<Table>());
                 var current = timeTable.Tables.GetTable.Last();
-                current.RouteInfo = current.Dict["jaratinfok"]["0"].ToObject<RouteInfo>();
-                current.GetTransferChangeInfo = current.Dict["atszallasinfok"]["0"].ToObject<TransferChangeInfo>();
+                current.RouteInfo = current.JTokenDict["jaratinfok"]["0"].ToObject<RouteInfo>();
+                current.GetTransferChangeInfo = current.JTokenDict["atszallasinfok"]["0"].ToObject<TransferChangeInfo>();
             }
 
             return timeTable;

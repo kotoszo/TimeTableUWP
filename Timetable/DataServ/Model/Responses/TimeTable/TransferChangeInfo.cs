@@ -5,17 +5,17 @@ namespace DataServ.Model.Responses.TimeTable
     public class TransferChangeInfo
     {
         [JsonProperty(PropertyName = "atszallasinfo")]
-        public string atszallasinfo { get; set; }
+        public string TransferInfo { get; set; }
 
         [JsonProperty(PropertyName = "atszallohely")]
-        public string atszallohely { get; set; }
+        public string LocationName { get; set; }
 
         [JsonProperty(PropertyName = "atszallaskorlatozas")]
-        public string atszallaskorlatozas { get; set; }
+        public string TransferChangeLimit { get; set; }
 
         public override string ToString()
         {
-            return $"{atszallasinfo} {atszallohely} {atszallaskorlatozas}";
+            return $"{TransferInfo} {LocationName} {TransferChangeLimit}";
         }
     }
 }

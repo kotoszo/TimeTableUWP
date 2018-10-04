@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace DataService.Interface.Response
+﻿namespace DataService.Interface.Response
 {
+    /// <summary>
+    /// Signs that the class is a Response
+    /// </summary>
+    /// <typeparam name="TResult"></typeparam>
     public interface IResponse<TResult> where TResult : IResult
     {
-        //string Status { get; set; }
 
-        //List<TResult> Results { get; set; }
     }
 }
