@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace DataService.IModel.IRequests
+namespace DataServ.Interface
 {
     public interface IRequest
     {
@@ -8,6 +8,8 @@ namespace DataService.IModel.IRequests
         string FunctionName { get; set; }
 
         [JsonProperty(PropertyName = "params")]
-        IParam Parameters {get;set;}
+        IParam Parameters { get; set; }
+
+        void LoadObjects(IParam obj);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace DataServ.Model.Responses.TimeTable
+namespace DataServ.Model.Responses
 {
     public class TransferChangeInfo
     {

@@ -1,4 +1,4 @@
-﻿namespace DataService.Model
+﻿namespace DataServ.Model
 {
     public class GeoPoint
     {

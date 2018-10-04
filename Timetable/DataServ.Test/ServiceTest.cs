@@ -1,7 +1,6 @@
 using DataServ;
-using DataService;
-using DataService.Model.Requests;
-using DataService.Model.Responses;
+using DataServ.Model;
+using DataServ.Model.Responses;
 using NUnit.Framework;
 using System;
 using System.Threading.Tasks;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 namespace DataServiceTest
 {
     [TestFixture]
-    public class UnitTest1
+    public class ServiceTest
     {
         private IService service;
 

@@ -1,6 +1,6 @@
-﻿using DataService.Interface.Request;
+﻿using DataServ.Interface;
 
-namespace DataService.Model.Requests
+namespace DataServ.Model
 {
     public class TimeTableRequest : IRequest
     {

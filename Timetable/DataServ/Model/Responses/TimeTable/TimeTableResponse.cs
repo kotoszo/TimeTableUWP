@@ -1,7 +1,6 @@
-﻿using DataService.Interface.Response;
-using System.Collections.Generic;
+﻿using DataServ.Interface;
 
-namespace DataService.Model.Responses
+namespace DataServ.Model
 {
     public class TimeTableResponse : IResponse<TimeTable>
     {

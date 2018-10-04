@@ -1,10 +1,9 @@
-﻿using DataServ.Model.Responses.TimeTable;
-using DataService.Interface.Response;
+﻿using DataServ.Interface;
+using DataServ.Model.Responses;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 
-namespace DataService.Model.Responses
+namespace DataServ.Model
 {
     public class TimeTable : IResult
     {

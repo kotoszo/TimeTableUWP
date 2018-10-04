@@ -1,9 +1,9 @@
-﻿using DataService.Interface.Response;
+﻿using DataServ.Interface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace DataService.Model.Responses
+namespace DataServ.Model.Responses
 {
     [Serializable]
     public class StationResponse : IResponse<Station>

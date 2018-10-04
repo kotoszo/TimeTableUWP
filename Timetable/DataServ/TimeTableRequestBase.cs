@@ -1,4 +1,4 @@
-﻿namespace DataService.BaseF
+﻿namespace DataServ.BaseF
 {
     internal static class TimeTableRequestBase
     {

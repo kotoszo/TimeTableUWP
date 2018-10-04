@@ -1,9 +1,9 @@
-﻿using DataService.BaseF;
-using DataService.Interface.Request;
+﻿using DataServ.BaseF;
+using DataServ.Interface;
 using Newtonsoft.Json;
 using System;
 
-namespace DataService.Model.Requests
+namespace DataServ.Model
 {
     [Serializable]
     public class StationParam : IParam

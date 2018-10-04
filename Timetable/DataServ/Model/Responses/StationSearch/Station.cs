@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DataServ.Interface;
 using Newtonsoft.Json;
-using DataService.Interface.Response;
+using System;
 
-namespace DataService.Model.Responses
+namespace DataServ.Model.Responses
 {
     [Serializable]
     public class Station : IResult

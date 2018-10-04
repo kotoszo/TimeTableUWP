@@ -1,4 +1,4 @@
-﻿using DataService.Model.Requests;
+﻿using DataServ.Model;
 using System;
 
 namespace DataServiceTest

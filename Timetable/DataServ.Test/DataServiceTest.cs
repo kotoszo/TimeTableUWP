@@ -1,19 +1,18 @@
-using DataServ.Model.Responses.TimeTable;
-using DataService.Model.Responses;
+﻿using DataServ.Model.Responses;
 using NUnit.Framework;
 using System;
 
-namespace DataManager.Test
+namespace DataServ.Test
 {
     [TestFixture]
-    public class UnitTest1
+    public class DataServiceTest
     {
-        private Manager manager;
+        private DataService manager;
 
         [OneTimeSetUp]
         public void Setup()
         {
-            manager = new Manager(new DataService.Service());
+            manager = new DataService(new DataServ.Service());
         }
 
         [TestCase("Szentendre")]

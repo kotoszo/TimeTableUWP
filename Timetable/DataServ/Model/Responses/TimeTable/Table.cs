@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
-namespace DataServ.Model.Responses.TimeTable
+namespace DataServ.Model.Responses
 {
     public class Table
     {
@@ -60,20 +60,28 @@ namespace DataServ.Model.Responses.TimeTable
 
         [JsonProperty(PropertyName = "explanations")]
         public string[] Explanations { get; set; }
+
         [JsonProperty(PropertyName = "totalDistance")]
         public double TotalDistance { get; set; }
+
         [JsonProperty(PropertyName = "totalFare")]
         public short TotalFare { get; set; }
+
         [JsonProperty(PropertyName = "totalFare50")]
         public short TotalFare50 { get; set; }
+
         [JsonProperty(PropertyName = "totalFare90")]
         public short TotalFare90 { get; set; }
+
         [JsonProperty(PropertyName = "totalAdditionalTicketPrice")]
         public short TotalAdditionalTicketPrice { get; set; }
+
         [JsonProperty(PropertyName = "eTicketAvailable")]
         public bool IsETicketAvailable { get; set; }
+
         [JsonProperty(PropertyName = "ossztav")]
         public string Ossztav { get; set; }
+
         [JsonProperty(PropertyName = "talalat_kozlekedik")]
         public string talalat_kozlekedik { get; set; }
 

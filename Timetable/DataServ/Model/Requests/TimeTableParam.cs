@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DataServ.BaseF;
+using DataServ.Interface;
+using DataServ.Model.Responses;
 using Newtonsoft.Json;
-using DataService.BaseF;
-using DataService.Model.Responses;
-using DataService.Interface.Request;
+using System;
 
-namespace DataService.Model.Requests
+namespace DataServ.Model
 {
     [Serializable]
     public class TimeTableParam : IParam

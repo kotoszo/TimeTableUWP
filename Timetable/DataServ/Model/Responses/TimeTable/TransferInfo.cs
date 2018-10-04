@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DataServ.Model.Responses.TimeTable
+namespace DataServ.Model.Responses
 {
     public class TransferInfo
     {

@@ -1,5 +1,4 @@
-﻿using DataService.Interface.Request;
-using DataService.Interface.Response;
+﻿using DataServ.Interface;
 using System.Threading.Tasks;
 
 namespace DataServ

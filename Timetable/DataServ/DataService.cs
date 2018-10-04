@@ -1,21 +1,17 @@
-﻿using System;
-using DataServ;
-using System.Linq;
+﻿using DataServ.Model;
+using DataServ.Model.Responses;
 using Newtonsoft.Json.Linq;
-using DataServ.IModel.IRequests;
-using DataServ.IModel.IResponse;
+using System;
 using System.Collections.Generic;
-using DataService.Model.Requests;
-using DataService.Model.Responses;
-using DataServ.Model.Responses.TimeTable;
+using System.Linq;
 
-namespace DataManager
+namespace DataServ
 {
-    public class Manager
+    public class DataService
     {
         private IService service;
 
-        public Manager(IService service)
+        public DataService(IService service)
         {
             this.service = service;
         }
@@ -50,32 +46,5 @@ namespace DataManager
 
             return timeTable;
         }
-
-        #region exampleFromGergo
-
-        public ResponseBase<Station> GetStation(RequestBase<string> stationRequest)
-        {
-            return HandleRequest(stationRequest, (s) =>
-            {
-                return new Station
-                {
-                };
-            });
-        }
-
-        public ResponseBase<TResponse> HandleRequest<TRequest, TResponse>(RequestBase<TRequest> request, Func<TRequest, TResponse> method)
-        {
-            if (string.IsNullOrEmpty(request.Token))
-            {
-                throw new AccessViolationException();
-            }
-
-            var response = new ResponseBase<TResponse>();
-            response.ResponseData = method(request.RequestData);
-
-            return response;
-        }
-
-        #endregion exampleFromGergo
     }
 }

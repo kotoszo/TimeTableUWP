@@ -1,7 +1,7 @@
-﻿using DataService.Interface.Request;
+﻿using DataServ.Interface;
 using System;
 
-namespace DataService.Model.Requests
+namespace DataServ.Model
 {
     public class StationRequest : IRequest
     {

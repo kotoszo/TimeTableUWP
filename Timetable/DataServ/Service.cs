@@ -1,12 +1,10 @@
-﻿using DataServ;
-using DataService.Interface.Request;
-using DataService.Interface.Response;
+﻿using DataServ.Interface;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataService
+namespace DataServ
 {
     public class Service : IService
     {

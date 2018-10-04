@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataService.Interface.Response
+namespace DataServ.Interface
 {
     public interface IResult
     {

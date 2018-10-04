@@ -1,4 +1,4 @@
-﻿namespace DataService.Interface.Response
+﻿namespace DataServ.Interface
 {
     /// <summary>
     /// Signs that the class is a Response
@@ -6,6 +6,5 @@
     /// <typeparam name="TResult"></typeparam>
     public interface IResponse<TResult> where TResult : IResult
     {
-
     }
 }
